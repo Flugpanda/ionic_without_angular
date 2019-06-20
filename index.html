@@ -49,22 +49,22 @@
                             <ion-card-content>
                                 <ion-item>
                                     <ion-label position="floating">Expense Reason</ion-label>
-                                    <ion-input type="text" inputmode="text">
+                                    <ion-input type="text" inputmode="text" id="input-reason">
                                     </ion-input>
                                 </ion-item>
                                 <ion-item>
                                     <ion-label position="floating">Expense Amount</ion-label>
-                                    <ion-input type="number">
+                                    <ion-input type="number" id="input-amount">
                                     </ion-input>
                                 </ion-item>
 
                                 <!-- Normal HTML 5 elements can be used inside ionic components-->
                                 <div>
-                                    <ion-button expand="block" fill="outline" color="danger">
+                                    <ion-button expand="block" fill="outline" color="danger" id="btn-cancel">
                                         <ion-icon slot="start" name="trash"></ion-icon>
                                         Clear
                                     </ion-button>
-                                    <ion-button expand="block" fill="outline">
+                                    <ion-button expand="block" fill="outline" id="btn-add">
                                         <ion-icon name="add"></ion-icon>
                                         Add Expense
                                     </ion-button>
@@ -73,9 +73,27 @@
                         </ion-card>
                     </ion-col>
                 </ion-row>
+
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <p margin>Total Expense: <span id="span-total-expensens"></span></p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <ion-list id="list-expenses">
+                            <!-- render new items here -->
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+
             </ion-grid>
 
         </ion-content>
+
+        <!-- Alert controllers programmatically control the alert component. -->
+        <ion-alert-controller id="allert-controller"></ion-alert-controller>
+
     </ion-app>
 
     <script src="./app.js"></script>
