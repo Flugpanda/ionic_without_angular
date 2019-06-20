@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
     <link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- The main container element for an Ionic application -->
     <ion-app>
@@ -16,16 +17,68 @@
         <ion-header>
             <!-- Toolbars are positioned above or below content. -->
             <!-- When placed within an <ion-content>, toolbars will scroll with the content. -->
-            <ion-toolbar color='primary'>
+            <ion-toolbar color="primary">
                 <ion-title>Budget Planer</ion-title>
             </ion-toolbar>
-
         </ion-header>
 
         <!-- Main content area with some pre defined methods to control the scrollable area. -->
         <ion-content>
 
+            <!-- grid layout for the content -->
+            <!-- structure: grid - row - column -->
+            <ion-grid>
+                <!-- first row of the grid -->
+                <ion-row>
+                    <!-- columes inside the first grid -->
+                    <!-- 1 row has 12 colums -->
+                    <!-- size-md="6" => colums with a medium size of 6 -->
+                    <!-- offset="3" => offset from the left with a size of 3, on medium screen sizes -->
+                    <!-- [           12           ] -->
+                    <!-- [ offset-3 | size-6 |    ]-->
+                    <ion-col size-md="6" offset-md="3">
+                        <!-- Cards are a standard piece of UI that serves as an entry point to more detailed information. -->
+                        <ion-card>
+                            <!-- a header component for ion-card -->
+                            <ion-card-header>
+                                <ion-card-subtitle>Add a new Expense</ion-card-subtitle>
+                                <ion-card-title>New Expense</ion-card-title>
+                            </ion-card-header>
+
+                            <!-- ion-card-content is child component of ion-card that adds some content padding. -->
+                            <ion-card-content>
+                                <ion-item>
+                                    <ion-label position="floating">Expense Reason</ion-label>
+                                    <ion-input type="text" inputmode="text">
+                                    </ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Expense Amount</ion-label>
+                                    <ion-input type="number">
+                                    </ion-input>
+                                </ion-item>
+
+                                <!-- Normal HTML 5 elements can be used inside ionic components-->
+                                <div>
+                                    <ion-button expand="block" fill="outline" color="danger">
+                                        <ion-icon slot="start" name="trash"></ion-icon>
+                                        Clear
+                                    </ion-button>
+                                    <ion-button expand="block" fill="outline">
+                                        <ion-icon name="add"></ion-icon>
+                                        Add Expense
+                                    </ion-button>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
         </ion-content>
     </ion-app>
+
+    <script src="./app.js"></script>
 </body>
+
 </html>
